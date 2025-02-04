@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Gallery</title>
+  <link rel="stylesheet" href="Shiurim.css">
+</head>
+<body>
+  <header>
+    <!--Logo de Aish-->
+    <a href="1Home.html"><img id="logo" 
+        src="https://yeshiva.aish.com/wp-content/uploads/2021/11/aish-yeshiva-logo-mobile.png" alt="Logo Aish Latino"></a>
+    <!--Menu de inicio-->
+    <nav role="navigation" aria-label="menú principal">
+        <ul class="nav-items">
+            <li class="dropdown">
+                <a href="1Home.html">Home</a>
+            </li>
+            <li class="dropdown">
+                <a href="nosotros.html">Nosotros </a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="#historia.html" class="menu">Historia Aish</a></li>
+                        <li><a href="conoce.html" class="menu">El staff </a></li>
+                        <li><a href="#hoy.html" class="menu">Yeshiva Aish HaTora Latino hoy</a></li>
+                        <li><a href="#campus.html" class="menu">El Campus </a></li>
+                        <li><a href="#alumnos.html" class="menu">Nuestros Alumnos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="programa.html">Programa </a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="#bet-midras.html">Programa Bet Midrash Latino </a></li>
+                        <li><a href="#horarios.html">Horarios de Clases</a></li>
+                        <li><a href="#precio.html">Precio y becas</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="preguntas.html">Preguntas</a>
+            </li>
+            <li class="dropdown">
+                <a href="Shiurim.html">Shiurim </a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="#audios.html">Audios</a></li>
+                        <li><a href="#videos.html">Videos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="contactanos.html">Contáctanos </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--botones de donar y aplicar-->
+    <div class="header-buttons">
+        <button class="donar"> Donar</button>
+        <button class="aplicar"> Aplicar ▶</button>
+    </div>
+
+    <!-- Icono de hamburguesa -->
+    <div class="hamburger-menu" id="hamburgerMenu" name="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<div class="sidebar collapsed">
+  <div class="logo">
+    <button id="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+  <div class="menu-section">
+    <p class="section-title">BROWSE</p>
+    <ul class="menu-items">
+      <li><i class="icon topics"></i><span class="menu-text">Topics</span></li>
+      <li><i class="icon speakers"></i><span class="menu-text">Speakers</span></li>
+      <li><i class="icon series"></i><span class="menu-text">Series</span></li>
+      <li><i class="icon organizations"></i><span class="menu-text">Organizations</span></li>
+      <li><i class="icon daily-dose"></i><span class="menu-text">Daily Dose</span></li>
+      <li><i class="icon clips"></i><span class="menu-text">Clips</span></li>
+      <li><i class="icon story-anytime"></i><span class="menu-text">StoryAnytime</span></li>
+      <li><i class="icon newsletters"></i><span class="menu-text">Newsletters</span></li>
+      <li><i class="icon live-events"></i><span class="menu-text">Live Events</span></li>
+    </ul>
+  </div>
+  <div class="menu-section">
+    <p class="section-title">MY TAT</p>
+    <ul class="menu-items">
+      <li><i class="icon history"></i><span class="menu-text">History</span></li>
+      <li><i class="icon playlists"></i><span class="menu-text">Playlists</span></li>
+      <li><i class="icon watch-later"></i><span class="menu-text">Watch Later</span></li>
+      <li><i class="icon likes"></i><span class="menu-text">Likes</span></li>
+    </ul>
+  </div>
+</div>
+<main>
+  <!-- Tu contenido principal -->
+  <h1>Video Gallery</h1>
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search videos...">
+    <select id="category-filter">
+      <option value="all">All Categories</option>
+      <option value="education">Education</option>
+      <option value="music">Music</option>
+      <option value="sports">Sports</option>
+    </select>
+  </div>
+  <section class="featured-video">
+    <video controls>
+      <source src="featured-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h2>Featured Video</h2>
+    <p>Description of the featured video goes here.</p>
+  </section>
+
+  <section class="video-gallery">
+    <div class="video-item" data-category="education">
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+      </video>
+      <h3>Video 1</h3>
+    </div>
+    <div class="video-item" data-category="music">
+      <video controls>
+        <source src="video2.mp4" type="video/mp4">
+      </video>
+      <h3>Video 2</h3>
+    </div>
+    <div class="video-item" data-category="sports">
+      <video controls>
+        <source src="video3.mp4" type="video/mp4">
+      </video>
+      <h3>Video 3</h3>
+    </div>
+    <!-- Add more videos here -->
+  </section>
+</main>
+</main>
+
+  <script src="Shiurim.js"></script>
+</body>
+</html>

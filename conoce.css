@@ -1,0 +1,86 @@
+body {
+    background-color: #0a1a41;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.cabezera{
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+    color: #fff;
+    margin: auto;
+    position: relative;
+    top: 50px;
+    left: -450px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.side-text-conoce{
+    writing-mode: vertical-rl;
+    color: #4fc3f7;
+    font-weight: bold;
+    margin-right: 10px;
+    position: relative;
+    top: 150px;
+    left: 60px;
+    font-size: 4vw;
+}
+
+.titulo-nuestro{
+    position: relative;
+    width: 200px;
+    left: 9vw;
+    top: -3vw;
+    font-size: 5.5vw;
+}
+
+.titulo-staff{
+    position: relative;
+    width: 200px;
+    top: -4.5vw;
+    left: 9vw;
+    font-size: 8vw;
+}
+
+.imagen1{
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    left: 150%;
+    width: 700px; /* Ajusta el ancho deseado */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+.team {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    top: 300px;
+}
+
+.member {
+    width: 300px;
+    text-align: center;
+}
+
+.member img {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+}
+
+.member h3 {
+    font-size: 1.1em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.member p {
+    font-size: 0.9em;
+    color: #cccccc;
+}

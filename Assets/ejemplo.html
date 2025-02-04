@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #004080;
+      color: white;
+      text-align: center;
+    }
+
+    .filters {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filters input,
+    .filters select {
+      padding: 5px;
+      font-size: 1rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .featured-video {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .featured-video video {
+      width: 100%;
+      max-width: 800px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .video-item {
+      background: white;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+    }
+
+    .video-item:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-item video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .video-gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Video Gallery</h1>
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search videos...">
+      <select id="category-filter">
+        <option value="all">All Categories</option>
+        <option value="education">Education</option>
+        <option value="music">Music</option>
+        <option value="sports">Sports</option>
+      </select>
+    </div>
+    <section class="featured-video">
+      <video controls>
+        <source src="featured-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <h2>Featured Video</h2>
+      <p>Description of the featured video goes here.</p>
+    </section>
+
+    <section class="video-gallery">
+      <div class="video-item" data-category="education">
+        <video controls>
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+        <h3>Video 1</h3>
+      </div>
+      <div class="video-item" data-category="music">
+        <video controls>
+          <source src="video2.mp4" type="video/mp4">
+        </video>
+        <h3>Video 2</h3>
+      </div>
+      <div class="video-item" data-category="sports">
+        <video controls>
+          <source src="video3.mp4" type="video/mp4">
+        </video>
+        <h3>Video 3</h3>
+      </div>
+      <!-- Add more videos here -->
+    </section>
+  </main>
+
+  <script>
+    // JavaScript to filter videos by category or search term
+    document.getElementById('search').addEventListener('input', filterVideos);
+    document.getElementById('category-filter').addEventListener('change', filterVideos);
+
+    function filterVideos() {
+      const searchValue = document.getElementById('search').value.toLowerCase();
+      const categoryValue = document.getElementById('category-filter').value;
+      const videoItems = document.querySelectorAll('.video-item');
+
+      videoItems.forEach(item => {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const category = item.dataset.category;
+
+        if (
+          (categoryValue === 'all' || category === categoryValue) &&
+          title.includes(searchValue)
+        ) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
